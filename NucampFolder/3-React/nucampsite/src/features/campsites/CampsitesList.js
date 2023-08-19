@@ -1,11 +1,10 @@
-import { Col, Row } from "reactstrap";
-import CampsiteCard from "./CampsiteCard";
-import { selectAllCampsites } from "./campsitesSlice";
-
-
+import { Col, Row } from 'reactstrap';
+import CampsiteCard from './CampsiteCard';
+import { selectAllCampsites } from './campsitesSlice';
 
 const CampsitesList = () => {
     const campsites = selectAllCampsites();
+
     return (
         <Row className='ms-auto'>
             {campsites.map((campsite) => {
@@ -18,7 +17,5 @@ const CampsitesList = () => {
         </Row>
     );
 };
-
-
 
 export default CampsitesList;
