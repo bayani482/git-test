@@ -1,12 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import ContactPage from './pages/ContactPage';
-import HomePage from './pages/HomePage';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CampsitesDirectoryPage from './pages/CampsitesDirectoryPage';
-import CampsiteDetailPage from './pages/CampsiteDetailPage';
-import AboutPage from './pages/AboutPage';
+import {Header, Footer} from  './components'
+import { 
+    ContactPage, 
+    HomePage, 
+    CampsiteDetailPage, 
+    CampsitesDirectoryPage, 
+    AboutPage 
+} from './pages';
+
 import './App.css';
+
 
 function App() {
     return (
