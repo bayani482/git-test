@@ -239,34 +239,6 @@ const Main = () => {
         dispatch(fetchComments());
     }, [dispatch]);
 
-    const showNetInfo = async () => {
-        try {
-            const connectionInfo = await NetInfo.fetch();
-            let connectionMsg = 'You are now connected to an active network.';
-            switch (connectionInfo.type) {
-                case 'none':
-                    connectionMsg = 'No network connection is active.';
-                    break;
-                case 'unknown':
-                    connectionMsg = 'The network connection state is now unknown.';
-                    break;
-                case 'cellular':
-                    connectionMsg = 'You are now connected to a cellular network.';
-                    break;
-                case 'wifi':
-                    connectionMsg = 'You are now connected to a WiFi network.';
-                    break;
-            }
-            if (Platform.OS === 'ios') {
-                Alert.alert('Connection change:', connectionMsg);
-            } else {
-                ToastAndroid.show(connectionMsg, ToastAndroid.LONG);
-            }
-        } catch (error) {
-            console.error('Error fetching network information:', error);
-        }
-    };
-    
     useEffect(() => {
         NetInfo.fetch().then((connectionInfo) => {
             Platform.OS === 'ios'
